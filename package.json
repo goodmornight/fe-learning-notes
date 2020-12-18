@@ -1,0 +1,19 @@
+{
+  "name": "vue-learning-docs",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "goodmornight",
+    "email": "goodnightlilanhui@gmail.com"
+  },
+  "repository": "https://github.com/goodmornight/vue-learning-docs.git/vue-learning-docs",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
