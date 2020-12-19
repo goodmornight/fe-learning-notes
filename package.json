@@ -7,7 +7,7 @@
     "name": "goodmornight",
     "email": "goodnightlilanhui@gmail.com"
   },
-  "homepage": "https://goodmornight.github.io/vue-learning-docs",
+  "homepage": ".",
   "repository": "https://github.com/goodmornight/vue-learning-docs.git/vue-learning-docs",
   "scripts": {
     "dev": "vuepress dev src",
