@@ -8,7 +8,7 @@
     "email": "goodnightlilanhui@gmail.com"
   },
   "homepage": ".",
-  "repository": "https://github.com/goodmornight/vue-learning-docs.git/vue-learning-docs",
+  "repository": "https://github.com/goodmornight/fe-learning-notes.git",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
