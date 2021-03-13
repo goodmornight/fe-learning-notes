@@ -34,8 +34,12 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
+        text: 'Guide',
+        link: '/guide/',
+      },
+      {
         text: '数据结构与算法',
-        link: '/algorithm/'
+        link: '/algorithm/',
       },
       {
         text: 'HTML+CSS',
@@ -75,15 +79,46 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/guide/': [
+      // '/guide/': [
+      //   {
+      //     title: 'Guide',
+      //     collapsable: false,
+      //     children: [
+      //       '',
+      //       'using-vue',
+      //     ]
+      //   }
+      // ],
+      '/algorithm/': [
+        '',
         {
-          title: 'Guide',
+          title: '数据结构',
           collapsable: false,
           children: [
-            '',
-            'using-vue',
+            'stack',
+            'queue',
+            'linkedList',
+            'set',
+            'map',
+            'tree',
+            'heap',
+            'graph',
           ]
-        }
+        },
+        {
+          title: '算法',
+          collapsable: false,
+          children: [
+            'sort'
+          ]
+        },
+        {
+          title: '算法设计思想',
+          collapsable: false,
+          children: [
+            'sort'
+          ]
+        },
       ],
     }
   },
@@ -94,5 +129,8 @@ module.exports = {
   plugins: [
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
-  ]
+  ],
+  markdown: {
+    lineNumbers: true
+  }
 }
