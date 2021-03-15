@@ -9,6 +9,10 @@
 - 链表：增删非首尾元素时，不需要移动元素，只需要改next指向即可。
 ## 应用场景
 - JS中的原型链
+### 原型链
+- 原型链的本质是链表
+- 原型链上的节点是各种原型对象：`Function.prototype`、`Object.prototype`
+- 原型链通过`__prototype__`属性连接各种原型对象
 ## Leetcode
 经典面试题：
 - 链表访问
@@ -69,5 +73,40 @@ var addTwoNumbers = function(l1, l2) {
     if(carry) p3.next = new ListNode(carry);
 
     return l3.next;
+};
+```
+## 83. 删除排序链表中的重复元素
+题目链接：[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
+时间复杂度O(N)
+空间复杂度O(1)：没有添加新的
+```
+var deleteDuplicates = function(head) {
+    let p = head;
+    while(p && p.next) {
+        if(p.val === p.next.val) {
+            p.next = p.next.next;
+        } else {
+            p = p.next;
+        }
+    }
+    return head;
+};
+```
+## 141. 环形链表
+题目链接：[https://leetcode-cn.com/problems/linked-list-cycle/](https://leetcode-cn.com/problems/linked-list-cycle/)
+时间复杂度O(N)
+空间复杂度O(1)
+```
+var hasCycle = function(head) {
+    let p1 = head;
+    let p2 = head;
+    while(p1 && p2 && p2.next) {
+        p1 = p1.next;
+        p2 = p2.next.next;
+        if(p1 === p2) {
+            return true;
+        }
+    }
+    return false;
 };
 ```
