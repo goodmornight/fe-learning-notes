@@ -102,7 +102,7 @@ module.exports = {
             'map',
             'tree',
             'heap',
-            'graph',
+            'graph'
           ]
         },
         {
@@ -116,7 +116,7 @@ module.exports = {
           title: '算法设计思想',
           collapsable: false,
           children: [
-            'sort'
+            
           ]
         },
       ],
