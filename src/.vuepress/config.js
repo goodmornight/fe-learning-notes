@@ -33,10 +33,10 @@ module.exports = {
     editLinkText: '',
     lastUpdated: false,
     nav: [
-      {
-        text: 'Guide',
-        link: '/guide/',
-      },
+      // {
+      //   text: 'Guide',
+      //   link: '/guide/',
+      // },
       {
         text: '数据结构与算法',
         link: '/algorithm/',
@@ -72,6 +72,10 @@ module.exports = {
       {
         text: '设计模式',
         link: '/algorithm/'
+      },
+      {
+        text: '小技巧',
+        link: '/tips/'
       },
       {
         text: '博客',
@@ -119,6 +123,16 @@ module.exports = {
             
           ]
         },
+      ],
+      '/tips/': [
+        {
+          title: '开发小技巧',
+          collapsable: false,
+          children: [
+            '',
+            'using-vue',
+          ]
+        }
       ],
     }
   },
