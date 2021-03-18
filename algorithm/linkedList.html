@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>链表 | GoodNight FE Notes</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.f1075b4d.css" as="style"><link rel="preload" href="/assets/js/app.efcdc2d1.js" as="script"><link rel="preload" href="/assets/js/2.c1bac414.js" as="script"><link rel="preload" href="/assets/js/13.5c7657c7.js" as="script"><link rel="prefetch" href="/assets/js/10.6a549ff3.js"><link rel="prefetch" href="/assets/js/11.57a0adb3.js"><link rel="prefetch" href="/assets/js/12.a595eead.js"><link rel="prefetch" href="/assets/js/14.f643c209.js"><link rel="prefetch" href="/assets/js/15.2a27d791.js"><link rel="prefetch" href="/assets/js/16.c24cccb7.js"><link rel="prefetch" href="/assets/js/17.f89f3048.js"><link rel="prefetch" href="/assets/js/18.a46b36cf.js"><link rel="prefetch" href="/assets/js/19.7ac44583.js"><link rel="prefetch" href="/assets/js/20.3d531612.js"><link rel="prefetch" href="/assets/js/21.46a8ec2b.js"><link rel="prefetch" href="/assets/js/22.2a89464a.js"><link rel="prefetch" href="/assets/js/23.e53bc8b8.js"><link rel="prefetch" href="/assets/js/3.5fe7f172.js"><link rel="prefetch" href="/assets/js/4.c96e4905.js"><link rel="prefetch" href="/assets/js/5.34d68ab9.js"><link rel="prefetch" href="/assets/js/6.c9f44ce5.js"><link rel="prefetch" href="/assets/js/7.ba856462.js"><link rel="prefetch" href="/assets/js/8.5eb332ed.js"><link rel="prefetch" href="/assets/js/9.877ed58a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f1075b4d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">GoodNight FE Notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  数据结构与算法
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  HTML+CSS
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  JS
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  Vue
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  Webpack
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  NodeJS
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  设计模式
+</a></div><div class="nav-item"><a href="http://www.goodnight.wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/guide/" class="nav-link">
+  Guide
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  数据结构与算法
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  HTML+CSS
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  JS
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  Vue
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  React
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  Webpack
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  NodeJS
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  性能优化
+</a></div><div class="nav-item"><a href="/algorithm/" class="nav-link router-link-active">
+  设计模式
+</a></div><div class="nav-item"><a href="http://www.goodnight.wiki/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/algorithm/" aria-current="page" class="sidebar-link">前言</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>数据结构</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/stack.html" class="sidebar-link">栈</a></li><li><a href="/algorithm/queue.html" class="sidebar-link">队列</a></li><li><a href="/algorithm/linkedList.html" aria-current="page" class="active sidebar-link">链表</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/algorithm/linkedList.html#特点" class="sidebar-link">特点</a></li><li class="sidebar-sub-header"><a href="/algorithm/linkedList.html#应用场景" class="sidebar-link">应用场景</a></li><li class="sidebar-sub-header"><a href="/algorithm/linkedList.html#leetcode" class="sidebar-link">Leetcode</a></li></ul></li><li><a href="/algorithm/set.html" class="sidebar-link">集合</a></li><li><a href="/algorithm/map.html" class="sidebar-link">字典</a></li><li><a href="/algorithm/tree.html" class="sidebar-link">树</a></li><li><a href="/algorithm/heap.html" class="sidebar-link">堆</a></li><li><a href="/algorithm/graph.html" class="sidebar-link">图</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>算法</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/algorithm/sort.html" class="sidebar-link">排序</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>算法设计思想</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="链表"><a href="#链表" class="header-anchor">#</a> 链表</h1> <h2 id="特点"><a href="#特点" class="header-anchor">#</a> 特点</h2> <ul><li>多个元素组成的列表</li> <li>元素存储不连续，通过next指针连在一起</li> <li>JS中没有链表，可以使用Object模拟链表</li></ul> <h3 id="数组于链表"><a href="#数组于链表" class="header-anchor">#</a> 数组于链表</h3> <ul><li>数组：增删非首尾元素往往需要移动元素。</li> <li>链表：增删非首尾元素时，不需要移动元素，只需要改next指向即可。</li></ul> <h2 id="应用场景"><a href="#应用场景" class="header-anchor">#</a> 应用场景</h2> <ul><li>JS中的原型链</li></ul> <h3 id="原型链"><a href="#原型链" class="header-anchor">#</a> 原型链</h3> <ul><li>原型链的本质是链表</li> <li>原型链上的节点是各种原型对象：<code>Function.prototype</code>、<code>Object.prototype</code></li> <li>原型链通过<code>__prototype__</code>属性连接各种原型对象</li></ul> <h2 id="leetcode"><a href="#leetcode" class="header-anchor">#</a> Leetcode</h2> <p>经典面试题：</p> <ul><li>链表访问</li> <li>链表反转</li> <li>链表节点删除</li></ul> <h3 id="链表访问"><a href="#链表访问" class="header-anchor">#</a> 链表访问</h3> <h4 id="_141-环形链表"><a href="#_141-环形链表" class="header-anchor">#</a> 141. 环形链表</h4> <p>题目链接：<a href="https://leetcode-cn.com/problems/linked-list-cycle/" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/linked-list-cycle/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ul><li>思路1:使用哈希表(额外的存储区)存储已经遍历过的节点</li> <li>思路2:双指针做法
+<ul><li>使用快慢指针，快指针一次向前2个节点 慢指针一次向前1个节点</li> <li>有环的链表中，快指针和慢指针最终一定会在环中相遇</li> <li>无环的链表中，快指针会率先访问到链表尾 从而终结检测过程</li></ul></li></ul> <p>时间复杂度O(N)
+空间复杂度O(1)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var hasCycle = function(head) {
+    let p1 = head;
+    let p2 = head;
+    while(p1 &amp;&amp; p2 &amp;&amp; p2.next) {
+        p1 = p1.next;
+        p2 = p2.next.next;
+        if(p1 === p2) {
+            return true;
+        }
+    }
+    return false;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="_2-两数相加"><a href="#_2-两数相加" class="header-anchor">#</a> 2. 两数相加</h4> <p>题目链接：<a href="https://leetcode-cn.com/problems/add-two-numbers/" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/add-two-numbers/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>时间复杂度O(N)：两个链表长度的较大值</p> <p>空间复杂度O(N)：两个链表长度的较大值或较大值+1</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">addTwoNumbers</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">l1<span class="token punctuation">,</span> l2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> l3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> p1 <span class="token operator">=</span> l1<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> p2 <span class="token operator">=</span> l2<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> p3 <span class="token operator">=</span> l3<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> carry <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">||</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> v1 <span class="token operator">=</span> p1 <span class="token operator">?</span> p1<span class="token punctuation">.</span>val<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> v2 <span class="token operator">=</span> p2 <span class="token operator">?</span> p2<span class="token punctuation">.</span>val<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> val <span class="token operator">=</span> v1 <span class="token operator">+</span> v2 <span class="token operator">+</span> carry<span class="token punctuation">;</span>
+
+        carry <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>val <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        p3<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>val <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span> p1 <span class="token operator">=</span> p1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>p2<span class="token punctuation">)</span> p2 <span class="token operator">=</span> p2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        p3 <span class="token operator">=</span> p3<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>carry<span class="token punctuation">)</span> p3<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>carry<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> l3<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="链表反转"><a href="#链表反转" class="header-anchor">#</a> 链表反转</h3> <h4 id="_206-反转链表"><a href="#_206-反转链表" class="header-anchor">#</a> 206.反转链表</h4> <p>题目链接：<a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/reverse-linked-list/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>时间复杂度O(N)</p> <p>空间复杂度O(1)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var reverseList = function(head) {
+    let p1 = head;
+    let p2 = null;
+    while (p1) {
+        let tmp = p1.next;
+        p1.next = p2;
+        p2 = p1;
+        p1 = tmp;
+    }
+    return p2;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="链表节点删除"><a href="#链表节点删除" class="header-anchor">#</a> 链表节点删除</h3> <h4 id="_237-删除链表中的节点"><a href="#_237-删除链表中的节点" class="header-anchor">#</a> 237.删除链表中的节点</h4> <p>题目链接：<a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/delete-node-in-a-linked-list/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>时间复杂度O(1)</p> <p>空间复杂度O(1)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var deleteNode = function(node) {
+    node.val = node.next.val;
+    node.next = node.next.next;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h4 id="_83-删除排序链表中的重复元素"><a href="#_83-删除排序链表中的重复元素" class="header-anchor">#</a> 83. 删除排序链表中的重复元素</h4> <p>题目链接：<a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/" target="_blank" rel="noopener noreferrer">https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>时间复杂度O(N)</p> <p>空间复杂度O(1)：没有添加新的</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var deleteDuplicates = function(head) {
+    let p = head;
+    while(p &amp;&amp; p.next) {
+        if(p.val === p.next.val) {
+            p.next = p.next.next;
+        } else {
+            p = p.next;
+        }
+    }
+    return head;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/algorithm/queue.html" class="prev">
+        队列
+      </a></span> <span class="next"><a href="/algorithm/set.html">
+        集合
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.efcdc2d1.js" defer></script><script src="/assets/js/2.c1bac414.js" defer></script><script src="/assets/js/13.5c7657c7.js" defer></script>
+  </body>
+</html>
