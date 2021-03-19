@@ -6,7 +6,7 @@
 - 树的常用操作：
     - 深度/广度优先遍历
     - 先中后序遍历
-## 遍历
+## 深度/广度优先遍历
 ### 深度优先遍历DFS
 尽可能深的搜索树的分支
 
@@ -54,3 +54,86 @@ dfs(tree);
 - 2. 把队头出队并访问
 - 3. 把队头的children挨个入队
 - 4. 重复第2、3步，直到队列为空
+
+```JS
+const tree = {
+    val: 'a',
+    children: [{
+        val: 'b',
+        children: [{
+            val: 'd',
+            children: []
+        }, {
+            val: 'e',
+            children: []
+        }]
+    }, {
+        val: 'c',
+        children: [{
+            val: 'f',
+            children: []
+        }, {
+            val: 'g',
+            children: []
+        }]
+    }]
+}
+
+const bfs = (root) => {
+    const queue = [root];
+    while(queue.length > 0) {
+        let node = queue.shift();
+        console.log(node.val);
+        node.children.forEach(item => {
+            queue.push(item);
+        })
+    }
+}
+bfs(tree);
+```
+## 二叉树
+- 树中每个节点最多只能有两个子节点
+- 在JS中通常用Object来模拟二叉树
+## 先序遍历
+口诀：
+- 访问**根**节点
+- 对根节点的**左**子树进行先序遍历
+- 对根节点的**右**子树进行先序遍历
+```JS
+// 递归版
+const preorder = (root) => {
+    if(!root) return;
+    console.log(root.val);
+    preorder(root.left)
+    preorder(root.right)
+}
+```
+## 中序遍历
+口诀：
+- 对根节点的**左**子树进行中序遍历
+- 访问**根**节点
+- 对根节点的**右**子树进行中序遍历
+```js
+// 递归版
+const inorder = (root) => {
+    if(!root) return;
+    inorder(root.left)
+    console.log(root.val);
+    inorder(root.right)
+}
+```
+
+## 后序遍历
+口诀：
+- 对根节点的**左**子树进行后序遍历
+- 对根节点的**右**子树进行后序遍历
+- 访问**根**节点
+```js
+// 递归版
+const postorder = (root) => {
+    if(!root) return;
+    postorder(root.left);
+    postorder(root.right);
+    console.log(root.val);
+}
+```
