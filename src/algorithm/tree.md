@@ -107,6 +107,17 @@ const preorder = (root) => {
     preorder(root.left)
     preorder(root.right)
 }
+// 非递归
+const preorder = function (root) {
+    if(!root) return;
+    let stack = [root];
+    while(stack.length){
+        const n = stack.pop();
+        console.log(n.val);
+        if(n.right) stack.push(n.right);
+        if(n.left) stack.push(n.left);
+    }
+}
 ```
 ## 中序遍历
 口诀：
@@ -120,6 +131,21 @@ const inorder = (root) => {
     inorder(root.left)
     console.log(root.val);
     inorder(root.right)
+}
+// 非递归
+const inorder = function (root) {
+    if(!root) return;
+    let stack = [];
+    let p = root;
+    while(stack.length || p) {
+        while(p) {
+            stack.push(p);
+            p = p.left;
+        }
+        const n = stack.pop();
+        console.log(n.val);
+        p = n.right;
+    }
 }
 ```
 
@@ -135,5 +161,21 @@ const postorder = (root) => {
     postorder(root.left);
     postorder(root.right);
     console.log(root.val);
+}
+// 非递归：先序遍历反过来
+const postorder = function (root) {
+    if(!root) return;
+    let stack = [root];
+    let outputStack = [];
+    while(stack.length){
+        const n = stack.pop();
+        outputStack.push(n);
+        if(n.left) stack.push(n.left);
+        if(n.right) stack.push(n.right);
+    }
+    while(outputStack.length) {
+        const n = outputStack.pop();
+        console.log(n.val);
+    }
 }
 ```
