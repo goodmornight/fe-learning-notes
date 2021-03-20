@@ -179,3 +179,184 @@ const postorder = function (root) {
     }
 }
 ```
+## 场景
+### 前端与树：遍历 JSON 的所有节点值
+```js
+const json = {
+    a: { b: { c: 1 } },
+    d: [0, 1]
+}
+
+const dfs = (n, path) => {
+    console.log(n, path);
+    Object.keys(n).forEach(i => {
+        dfs(n[i], path.concat(i));
+    })
+}
+dfs(json, [])
+```
+## Leetcode
+### 104. 二叉树的最大深度
+题目链接：[https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
+```js
+// 深度遍历
+var maxDepth = function(root) {
+    let res = 0;
+    const dfs = function (root, l) {
+        if(!root) return;
+        if(!root.left && !root.right) {
+            res = Math.max(res, l);
+        }
+        dfs(root.left, l + 1);
+        dfs(root.right, l + 1);
+    }
+    dfs(root, 1);
+    return res;
+};
+// 递归
+var maxDepth = function(root) {
+    if(!root) return 0;
+    return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
+};
+```
+### 111. 二叉树的最小深度
+题目链接：[https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/)
+
+时间复杂度O(N)
+
+空间复杂度O(N)
+```js
+var minDepth = function(root) {
+    if(!root) return 0;
+    let q = [[root, 1]];
+    while(q.length) {
+        const [n, l] = q.shift();
+        if(!n.left && !n.right) return l;
+        if(n.left) q.push([n.left, l + 1]);
+        if(n.right) q.push([n.right, l + 1]);
+    }
+};
+```
+时间复杂度O(N)
+
+空间复杂度O(N)
+```js
+var minDepth = function(root) {
+    if(!root) return 0;
+    if(!root.left) {
+        return minDepth(root.right) + 1;
+    } else if(!root.right) {
+        return minDepth(root.left) + 1;
+    } else {
+        return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
+    }
+};
+```
+
+### 102. 二叉树的层序遍历
+题目链接：[https://leetcode-cn.com/problems/binary-tree-level-order-traversal/](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+方法一
+```JS
+var levelOrder = function(root) {
+    if(!root) return [];
+    let q = [[root, 0]];
+    let res = [];
+    while(q.length) {
+        const [n, l] = q.shift();
+        if (!res[l]) {
+            res.push([n.val])
+        } else {
+            res[l].push(n.val)
+        }
+        if(n.left) q.push([n.left, l + 1]);
+        if(n.right) q.push([n.right, l + 1]);
+    }
+    return res;
+};
+```
+方法二
+
+时间复杂度O(N)
+
+空间复杂度O(N)
+
+```JS
+var levelOrder = function(root) {
+    if(!root) return [];
+    let q = [root];
+    let res = [];
+    while(q.length) {
+        let len = q.length;
+        res.push([])
+        while(len--) {
+            const n = q.shift();
+            res[res.length-1].push(n.val);
+            if(n.left) q.push(n.left);
+            if(n.right) q.push(n.right);
+        }
+        
+    }
+    return res;
+};
+```
+
+### 94. 二叉树的中序遍历
+题目链接：[https://leetcode-cn.com/problems/binary-tree-inorder-traversal/](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/)
+
+时间复杂度：O(N)
+
+空间复杂度：O(N)
+
+```js
+var inorderTraversal = function(root) {
+    let res = [];
+    const rec = (n) => {
+        if(!root) return;
+        if(n.left) rec(n.left);
+        res.push(n.val);
+        if(n.right) rec(n.right);
+    }
+    rec(root);
+    return res;
+};
+```
+
+```js
+var inorderTraversal = function(root) {
+    let res = [];
+    let stack = [];
+    let p = root;
+    while(stack.length || p) {
+        while(p) {
+            stack.push(p);
+            p = p.left;
+        }
+        const n = stack.pop();
+        res.push(n.val);
+        p = n.right;
+    }
+    return res;
+};
+```
+### 112. 路径总和
+题目链接：[https://leetcode-cn.com/problems/path-sum/](https://leetcode-cn.com/problems/path-sum/)
+
+时间复杂度O(N)
+
+空间复杂度：最好的时候O(logN)，最差的时候O(N)
+
+```JS
+var hasPathSum = function(root, targetSum) {
+    if(!root) return false;
+    let res = false;
+    const dfs = (n, s) => {
+        if (!n.left && !n.right && s==targetSum) {
+            res = true;
+        }
+        if(n.left) dfs(n.left, s + n.left.val);
+        if(n.right) dfs(n.right, s + n.right.val);
+    }
+    dfs(root, root.val);
+    return res;
+};
+```
